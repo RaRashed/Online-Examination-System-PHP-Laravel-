@@ -59,7 +59,7 @@ class Student extends Controller
    	 	$data['student']=Oex_student::where('id',$id)->get()->first();
    	 $data['exams'] = Oex_exam_master::where('status','1')->get()->toArray();
 
- 
+
    	return view('admin.students.student_edit',$data);
    }
    public function edit_new_student(Request $request)
@@ -81,14 +81,14 @@ class Student extends Controller
 
    public function single_student($id)
    {
-   	
-   
-   	 	$data['student']=Oex_student::where('id',$id)->get()->first();
-  
 
- 
+
+   	 	$data['student']=Oex_student::where('id',$id)->get()->first();
+
+
+
    	return view('admin.students.single_student',$data);
    }
-   
+
 
 }

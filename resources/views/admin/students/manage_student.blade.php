@@ -3,12 +3,12 @@
 @section('content')
 
 <div class="content-header">
-                   
+
                     <div class="leftside-content-header">
                         <ul class="breadcrumbs">
                             <li><i class="fa fa-home" aria-hidden="true"></i><a href="index.php">Dashboard</a></li>
                             <li><a href="">Manage Student</a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <div class="panel-content">
                             <div class="table-responsive">
                                 <table id="basic-table" class="data-table table table-striped nowrap table-hover table-bordered" cellspacing="0" width="100%">
-                          
+
 
                             <thead>
                               <th>#</th>
@@ -54,13 +54,13 @@
                                 <td>{{$student['dob']}}</td>
                                 <td>{{$student['ex_name']}}</td>
                                 <td>{{$student['exam_date']}}</td>
-                                
+
                            <td>
 
 
 
                                     @foreach($exam_join as $join)
-                                
+
 
                                        <?php
 
@@ -70,10 +70,10 @@
                                 }
 
                                  ?>
-                              
+
 
                                 @endforeach
-                             
+
 
 
 
@@ -85,17 +85,17 @@
 
                                   <a href="{{route('student.edit',$student['id'])}}" class="btn btn-primary"><i class=" fa fa-edit"></i></a>
                                         <a href="{{route('student.show',$student['id'])}}" class="btn btn-info"><i class=" fa fa-eye"></i></a>
-                                  
-                                 
+
+
                               <a href="{{route('student.delete',$student['id'])}}" class="btn btn-danger"><i class=" fa fa-trash"></i></a>
                                 </td>
                               </tr>
-                            
-                          
+
+
                           @endforeach
 
-                             
-               
+
+
                             </tbody>
 
 
@@ -140,25 +140,25 @@
             <div class="form-group">
               <label>Name</label>
               <input type="text" name="name" placeholder="Enter Name" class="form-control" required>
-              
+
 
             </div>
               <div class="form-group">
               <label>Email</label>
               <input type="email" name="email" placeholder="Enter E-Mail" class="form-control" required>
-              
+
 
             </div>
                <div class="form-group">
               <label>Mobile No</label>
               <input type="text" name="mobile_no" placeholder="Enter Mobile Number" class="form-control" required>
-              
+
 
             </div>
                 <div class="form-group">
               <label>Select DOB</label>
           <input type="date" name="dob" class="form-control" required>
-              
+
 
             </div>
 
@@ -166,102 +166,51 @@
                  <label>Select Exam</label>
               <select class="form-control" name="exam" required>
                 <option value="">Select</option>
-                
+
                   @foreach($exams as $exam)
                   <option value="{{$exam['id']}}">{{$exam['title']}}</option>
 
                   @endforeach
-              
+
               </select>
-              
+
 
             </div>
                <div class="form-group">
               <label>Password</label>
               <input type="password" name="password" placeholder="Enter Password" class="form-control" required>
-              
+
 
             </div>
-            
+
           </div>
           <div class="col-sm-12">
             <div class="form-group">
-        
+
         <button class="btn btn-primary" ><i class="fa fa-save"></i> Add Student</button>
     </div>
-       
+
       </div>
 
         </div>
       </form>
-        
+
       </div>
 
-      
+
     </div>
   </div>
 </div>
 
 
-<!-- <div id="myModal1-{{$student['id']}}" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title"> <i class="fa fa-graduation-cap"></i>Student Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-<form action="{{route('admin.manage_student')}}">
-  
-         <table class="table table-bordered">
-         <tr>
-           <th>Student Name</th>
-           <td>{{$student['name']}}</td>
-         </tr>
-          <tr>
-           <th>Student Email</th>
-           <td>{{$student['email']}}</td>
-         </tr>
-          <tr>
-           <th>Student Phone No</th>
-           <td>{{$student['mobile_no']}}</td>
-         </tr>
-          <tr>
-           <th>Student Birth Date</th>
-           <td>{{$student['dob']}}</td>
-         </tr>
-          <tr>
-           <th>Exam Name</th>
-           <td>{{$student['ex_name']}}</td>
-         </tr>
-           <tr>
-           <th>Exam Name</th>
-           <td>{{$student['exam_date']}}</td>
-         </tr>
-         </table>
-</form>
-
-      
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
--->
-
-
 
 
 
     </div>
 
-                 
 
-     
+
+
 
 
 

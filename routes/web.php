@@ -54,7 +54,7 @@ Route::post('/admin/edit_new_student','Student@edit_new_student')->name('admin.e
 Route::get('/admin/student/show/{id}','Student@single_student')->name('student.show');
 
 
-//Admin Manage Student
+//Admin Manage Po
 
 Route::get('/admin/manage_portal','Portal@manage_portal')->name('admin.manage_portal');
 Route::post('/admin/new_portal', 'Portal@add_portal')->name('admin.new_portal');

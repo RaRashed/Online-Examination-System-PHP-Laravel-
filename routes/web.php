@@ -52,6 +52,7 @@ Route::get('/admin/student_delete/{id}','Student@student_delete')->name('student
 Route::get('/admin/student/edit/{id}','Student@student_edit')->name('student.edit');
 Route::post('/admin/edit_new_student','Student@edit_new_student')->name('admin.edit_new_student');
 Route::get('/admin/student/show/{id}','Student@single_student')->name('student.show');
+Route::get('/admin/student_status/{id}', 'Student@student_status');
 
 
 //Admin Manage Po

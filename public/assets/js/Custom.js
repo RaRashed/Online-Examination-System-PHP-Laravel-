@@ -3,7 +3,7 @@ var url=$(this).attr('action');
 var data = $(this).serialize();
 $.post(url,data,function(fb){
 	var resp=$.parseJSON(fb);
-	
+
 	if(resp.status=='true'){
 		alert(resp.message);
 		setTimeout(function(){
@@ -36,6 +36,12 @@ $.get(BASE_URL+'/admin/portal_status/'+id,function(fb){
 	alert('Portal status successfully changed');
 })
 });
+$(document).on('click','.student_status',function(){
+    var id =$(this).attr('data-id');
+    $.get(BASE_URL+'/admin/student_status/'+id,function(fb){
+        alert('student status successfully changed');
+    })
+    });
 $(document).on('click','.question_status',function(){
 var id =$(this).attr('data-id');
 $.get(BASE_URL+'/admin/question_status/'+id,function(fb){

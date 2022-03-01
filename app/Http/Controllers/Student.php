@@ -90,5 +90,17 @@ class Student extends Controller
    	return view('admin.students.single_student',$data);
    }
 
+   public function student_status($id)
+   {
+      $student_status = Oex_student::where('id',$id)->get()->first();
+      if($student_status->status==1)
+         $status=0;
+      else
+         $status=1;
+      $student_status1=Oex_student::where('id',$id)->get()->first();
+      $student_status1->status=$status;
+      $student_status1->update();
+
+   }
 
 }

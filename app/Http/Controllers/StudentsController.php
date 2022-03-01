@@ -15,7 +15,7 @@ class StudentsController extends Controller
 
    	{
    			return redirect(url('student/dashboard'));
-   		
+
 
    	}
    	return view('students.signup');
@@ -26,7 +26,7 @@ class StudentsController extends Controller
 
    	{
    			return redirect(url('student/dashboard'));
-   		
+
 
    	}
    	return view('students.signin');
@@ -57,7 +57,7 @@ class StudentsController extends Controller
    	$arr=array('status'=>'true','message'=>'successfully Registration done','reload'=>url('student/signin'));
 
    	 	}
-   
+
    	}
    	else{
    		$arr=array('status'=>'false','message'=>$validator->errors()->all());
@@ -68,7 +68,7 @@ class StudentsController extends Controller
    }
      public function login_student(Request $request)
      {
-      $student = Oex_student::where('email',$request->email)->where('password',$request->password)->get()->toArray();	
+      $student = Oex_student::where('email',$request->email)->where('password',$request->password)->get()->toArray();
       if($student)
       {
       	if($student[0]['status']==1)
@@ -84,8 +84,8 @@ class StudentsController extends Controller
 
 
       }
-      
-   
+
+
    	else{
    		$arr=array('status'=>'false','message'=>'Email And Password not matched.');
 
@@ -101,7 +101,7 @@ class StudentsController extends Controller
    {
       $request->session()->forget('student_session');
          return redirect()->route('student.signin');
-      
+
    }
-  
+
 }

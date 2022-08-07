@@ -12,14 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('admin.login');
+    return view('home');
 });
+
 
 
 Auth::routes();
 
 //Admin Exam Category
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'AdminController@index')->name('admin.login');
 Route::get('/admin/exam_category', 'Admin@exam_category')->name('admin.exam_category');
 Route::post('/admin/new_category', 'Admin@add_category')->name('admin.new_category');
 Route::get('/category/delete/{id}', 'Admin@category_delete')->name('category.delete');

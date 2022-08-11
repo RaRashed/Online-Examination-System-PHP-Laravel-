@@ -106,3 +106,7 @@ Route::get('/student/show_result/{id}','StudentsOperation@show_result')->name('s
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

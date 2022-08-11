@@ -15,7 +15,7 @@ class UserPortal extends Controller
 
    	{
    			return redirect(url('portal/dashboard'));
-   		
+
 
    	}
    	return view('admin.users.user_signup');
@@ -26,7 +26,7 @@ class UserPortal extends Controller
 
    	{
    			return redirect(url('portal/dashboard'));
-   		
+
 
    	}
    	return view('admin.users.signin');
@@ -54,10 +54,10 @@ class UserPortal extends Controller
 
 
 
-   	$arr=array('status'=>'true','message'=>'successfully Registration done','reload'=>url('admin/user/signin'));
+   	$arr=array('status'=>'true','message'=>'successfully Registration done','reload'=>url('portal/user/signin'));
 
    	 	}
-   
+
    	}
    	else{
    		$arr=array('status'=>'false','message'=>$validator->errors()->all());
@@ -68,7 +68,7 @@ class UserPortal extends Controller
    }
      public function login_portal(Request $request)
      {
-      $portal = Oex_Portal::where('email',$request->email)->where('password',$request->password)->get()->toArray();	
+      $portal = Oex_Portal::where('email',$request->email)->where('password',$request->password)->get()->toArray();
       if($portal)
       {
       	if($portal[0]['status']==1)
@@ -84,8 +84,8 @@ class UserPortal extends Controller
 
 
       }
-      
-   
+
+
    	else{
    		$arr=array('status'=>'false','message'=>'Email And Password not matched.');
 
